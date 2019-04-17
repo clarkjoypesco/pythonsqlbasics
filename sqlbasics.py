@@ -108,3 +108,18 @@ insert into animals values('Wibble','opussom','2019-4-17');
 INSERT_QUERY = '''
 insert into animals(name,species,birthdate) values('Wibble','opussom','2019-4-17');
 '''
+
+
+
+#
+# Find the names of the individual animals that eat fish.
+#
+# The animals table has columns (name, species, birthdate) for each individual.
+# The diet table has columns (species, food) for each food that a species eats.
+#
+
+QUERY = '''
+select animals.name from animals join diet
+on animals.species = diet.species
+where food = 'fish';
+'''
